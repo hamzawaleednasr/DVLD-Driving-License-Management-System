@@ -1,0 +1,41 @@
+## Ignore Visual Studio Temporary Files, Build Results, and Diagnostics
+people-photos/
+
+# Build results
+[Dd]ebug/
+[Dd]ebugPublic/
+[Rr]elease/
+[Re]leases/
+x64/
+x86/
+[Aa]rm/
+[Aa]rm64/
+bld/
+[Bb]in/
+[Oo]bj/
+[Ll]og/
+[Ll]ogs/
+
+# Visual Studio 2015/2017/2019/2022 cache and settings
+.vs/
+# Visual Studio Code
+.vscode/
+
+# User-specific files
+*.rsuser
+*.suo
+*.user
+*.userosscache
+*.sln.docstates
+
+# Mono auto generated files
+mono_crash.*
+
+# Executables
+*.apk
+*.ap_
+*.exe
+
+# Rider
+.idea/
+*.sln.iml

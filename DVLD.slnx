@@ -1,0 +1,6 @@
+<Solution>
+  <Project Path="DVLD.DAL/DVLD.DAL.csproj" Id="5943bca4-87fd-4a31-9242-d672cbd280f4" />
+  <Project Path="DVLD.Core/DVLD.Core.csproj" Id="1fa4662c-ed93-4256-8895-47238e331132" />
+  <Project Path="DVLD.BLL/DVLD.BLL.csproj" Id="8ad29b05-0bcb-4dae-8997-a4c5f9a671f6" />
+  <Project Path="DVLD.PL/DVLD.PL.csproj" Id="cc62df65-77c4-4291-aedb-dc1c4c5b49f6" />
+</Solution>
