@@ -7,8 +7,8 @@ namespace DVLD.PL
 {
     public partial class LoginForm : Form
     {
-        private UserService _userService;    
-
+        private UserService _userService;  
+        
         public LoginForm()
         {
             InitializeComponent();
@@ -18,7 +18,10 @@ namespace DVLD.PL
 
         private void LoginForm_Load(object sender, EventArgs e)
         {
+            var rememberedData = RegisteryService.GetRememberedData();
 
+            txtUsername.Text = rememberedData.username ?? "";
+            txtPassword.Text = rememberedData.password ?? "";
         }
 
         private void btnLogin_Click(object sender, EventArgs e)
@@ -28,6 +31,11 @@ namespace DVLD.PL
             if (result.isValid)
             {
                 AppConfig.LoggedInUser = result.LoggedInUser;
+
+                if (chkRemember.Checked)
+                {
+                    RegisteryService.SetRememberedData(txtUsername.Text, txtPassword.Text);
+                }
 
                 this.DialogResult = DialogResult.OK;
             }
