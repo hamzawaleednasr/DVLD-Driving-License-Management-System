@@ -89,8 +89,9 @@ namespace DVLD.DAL.Repositories
 
                         }
                     }
-                    catch
+                    catch (Exception ex)
                     {
+                        EventLogger.LogError("DetainedLicenseRepository", "public List<DetainedLicense> GetAll()", ex.Message);
                         return null;
                     }
                 }
@@ -116,8 +117,9 @@ namespace DVLD.DAL.Repositories
                             }
                         }
                     }
-                    catch
+                    catch (Exception ex)
                     {
+                        EventLogger.LogError("DetainedLicenseRepository", "public List<DetainedLicenseViewModel> GetAllToView()", ex.Message);
                         return null;
                     }
                 }
@@ -147,8 +149,9 @@ namespace DVLD.DAL.Repositories
                             }
                         }
                     }
-                    catch
+                    catch (Exception ex)
                     {
+                        EventLogger.LogError("DetainedLicenseRepository", "public DetainedLicense GetByID(int id)", ex.Message);
                         return null;
                     }
                 }
@@ -178,8 +181,9 @@ namespace DVLD.DAL.Repositories
                             }
                         }
                     }
-                    catch
+                    catch (Exception ex)
                     {
+                        EventLogger.LogError("DetainedLicenseRepository", "public DetainedLicenseViewModel GetByIDToView(int id)", ex.Message);
                         return null;
                     }
                 }
@@ -206,8 +210,9 @@ namespace DVLD.DAL.Repositories
                         connection.Open();
                         return Convert.ToInt32(command.ExecuteScalar());
                     }
-                    catch
+                    catch (Exception ex)
                     {
+                        EventLogger.LogError("DetainedLicenseRepository", "public int Add(DetainedLicense entity)", ex.Message);
                         return -1;
                     }
                 }
@@ -246,8 +251,9 @@ namespace DVLD.DAL.Repositories
                         connection.Open();
                         return (command.ExecuteNonQuery() > 0);
                     }
-                    catch
+                    catch (Exception ex)
                     {
+                        EventLogger.LogError("DetainedLicenseRepository", "public bool Update(DetainedLicense entity)", ex.Message);
                         return false;
                     }
                 }
@@ -269,8 +275,9 @@ namespace DVLD.DAL.Repositories
                         connection.Open();
                         return (command.ExecuteNonQuery() > 0);
                     }
-                    catch
+                    catch (Exception ex)
                     {
+                        EventLogger.LogError("DetainedLicenseRepository", "public bool Delete(int id)", ex.Message);
                         return false;
                     }
                 }
@@ -299,8 +306,9 @@ namespace DVLD.DAL.Repositories
                             }
                         }
                     }
-                    catch
+                    catch (Exception ex)
                     {
+                        EventLogger.LogError("DetainedLicenseRepository", "public DetainedLicenseViewModel GetByNationalNumberToView(string nationalNumber)", ex.Message);
                         return null;
                     }
                 }
@@ -331,8 +339,9 @@ namespace DVLD.DAL.Repositories
                             }
                         }
                     }
-                    catch
+                    catch (Exception ex)
                     {
+                        EventLogger.LogError("DetainedLicenseRepository", "public List<DetainedLicenseViewModel> GetByFullNameToView(string fullName)", ex.Message);
                         return null;
                     }
                 }
@@ -362,8 +371,9 @@ namespace DVLD.DAL.Repositories
                             }
                         }
                     }
-                    catch
+                    catch (Exception ex)
                     {
+                        EventLogger.LogError("DetainedLicenseRepository", "public List<DetainedLicenseViewModel> GetByReleaseStatusToView(bool isRelease)", ex.Message);
                         return null;
                     }
                 }
@@ -384,8 +394,9 @@ namespace DVLD.DAL.Repositories
                         connection.Open();
                         return Convert.ToInt32(command.ExecuteScalar());
                     }
-                    catch
+                    catch (Exception ex)
                     {
+                        EventLogger.LogError("DetainedLicenseRepository", "public int GetNumberOfDetainedLicenses()", ex.Message);
                         return -1;
                     }
                 }

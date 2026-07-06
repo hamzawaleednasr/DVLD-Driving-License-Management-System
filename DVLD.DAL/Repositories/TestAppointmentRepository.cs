@@ -75,8 +75,9 @@ namespace DVLD.DAL.Repositories
                             }
                         }
                     }
-                    catch
+                    catch (Exception ex)
                     {
+                        EventLogger.LogError("TestAppointmentRepository", "public List<TestAppointment> GetAll()", ex.Message);
                         return null;
                     }
                 }
@@ -106,8 +107,9 @@ namespace DVLD.DAL.Repositories
                             }
                         }
                     }
-                    catch
+                    catch (Exception ex)
                     {
+                        EventLogger.LogError("TestAppointmentRepository", "public TestAppointment GetByID(int id)", ex.Message);
                         return null;
                     }
                 }
@@ -137,8 +139,9 @@ namespace DVLD.DAL.Repositories
                             }
                         }
                     }
-                    catch
+                    catch (Exception ex)
                     {
+                        EventLogger.LogError("TestAppointmentRepository", "public TestAppointmentViewModel GetByIDToView(int id)", ex.Message);
                         return null;
                     }
                 }
@@ -178,8 +181,9 @@ namespace DVLD.DAL.Repositories
                             );
                         }
                     }
-                    catch
+                    catch (Exception ex)
                     {
+                        EventLogger.LogError("TestAppointmentRepository", "public List<TestAppointmentDto> GetBy_TestTypeID_LocalLicenseApplicationID(int TestTypeID, int LocalLicenseApplicationID)", ex.Message);
                         return null;
                     }
                 }
@@ -218,8 +222,9 @@ namespace DVLD.DAL.Repositories
                         connection.Open();
                         return Convert.ToInt32(command.ExecuteScalar());
                     }
-                    catch
+                    catch (Exception ex)
                     {
+                        EventLogger.LogError("TestAppointmentRepository", "public int Add(TestAppointment entity)", ex.Message);
                         return -1;
                     }
                 }
@@ -257,8 +262,9 @@ namespace DVLD.DAL.Repositories
                         connection.Open();
                         return (command.ExecuteNonQuery() > 0);
                     }
-                    catch
+                    catch (Exception ex)
                     {
+                        EventLogger.LogError("TestAppointmentRepository", "public bool Update(TestAppointment entity)", ex.Message);
                         return false;
                     }
                 }
@@ -280,8 +286,9 @@ namespace DVLD.DAL.Repositories
                         connection.Open();
                         return (command.ExecuteNonQuery() > 0);
                     }
-                    catch
+                    catch (Exception ex)
                     {
+                        EventLogger.LogError("TestAppointmentRepository", "public bool Delete(int id)", ex.Message);
                         return false;
                     }
                 }
@@ -301,8 +308,9 @@ namespace DVLD.DAL.Repositories
                         connection.Open();
                         return Convert.ToInt32(command.ExecuteScalar());
                     }
-                    catch
+                    catch (Exception ex)
                     {
+                        EventLogger.LogError("TestAppointmentRepository", "public int GetNumberOfTestAppointments()", ex.Message);
                         return -1;
                     }
                 }

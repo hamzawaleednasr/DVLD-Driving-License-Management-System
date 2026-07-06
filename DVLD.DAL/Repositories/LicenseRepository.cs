@@ -54,8 +54,9 @@ namespace DVLD.DAL.Repositories
                             }
                         }
                     }
-                    catch
+                    catch (Exception ex)
                     {
+                        EventLogger.LogError("LicenseRepository", "public List<License> GetAll()", ex.Message);
                         return null;
                     }
                 }
@@ -86,8 +87,9 @@ namespace DVLD.DAL.Repositories
                             }
                         }
                     }
-                    catch
+                    catch (Exception ex)
                     {
+                        EventLogger.LogError("LicenseRepository", "public License GetByID(int id)", ex.Message);
                         return null;
                     }
                 }
@@ -129,8 +131,9 @@ namespace DVLD.DAL.Repositories
 
                         return Convert.ToInt32(command.ExecuteScalar());
                     }
-                    catch
+                    catch (Exception ex)
                     {
+                        EventLogger.LogError("LicenseRepository", "public int Add(License entity)", ex.Message);
                         return -1;
                     }
                 }
@@ -172,8 +175,9 @@ namespace DVLD.DAL.Repositories
                         connection.Open();
                         return (command.ExecuteNonQuery() > 0);
                     }
-                    catch
+                    catch (Exception ex)
                     {
+                        EventLogger.LogError("LicenseRepository", "public bool Update(License entity)", ex.Message);
                         return false;
                     }
                 }
@@ -195,8 +199,9 @@ namespace DVLD.DAL.Repositories
                         connection.Open();
                         return (command.ExecuteNonQuery() > 0);
                     }
-                    catch
+                    catch (Exception ex)
                     {
+                        EventLogger.LogError("LicenseRepository", "public bool Delete(int id)", ex.Message);
                         return false;
                     }
                 }
@@ -265,8 +270,9 @@ namespace DVLD.DAL.Repositories
                             }
                         }
                     }
-                    catch
+                    catch (Exception ex)
                     {
+                        EventLogger.LogError("LicenseRepository", "public LicenseInfoViewModel GetLicenseInfoByID(int licenseID)", ex.Message);
                         return null;
                     }
             }
@@ -296,8 +302,9 @@ namespace DVLD.DAL.Repositories
                             licenseID = id;
                         }
                     }
-                    catch
+                    catch (Exception ex)
                     {
+                        EventLogger.LogError("LicenseRepository", "public int GetActiveLicenseIDByApplicationID(int applicationID)", ex.Message);
                         return -1;
                     }
                 }
@@ -351,8 +358,9 @@ namespace DVLD.DAL.Repositories
                             );
                         }
                     }
-                    catch
+                    catch (Exception ex)
                     {
+                        EventLogger.LogError("LicenseRepository", "public List<LicenseHistoryViewModel> GetLicenseHistoryByDriverID(int driverID)", ex.Message);
                         return null;
                     }
                 }

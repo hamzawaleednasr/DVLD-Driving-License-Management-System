@@ -43,8 +43,9 @@ namespace DVLD.DAL.Repositories
 
                         }
                     }
-                    catch
+                    catch (Exception ex)
                     {
+                        EventLogger.LogError("CountryRepository", "public List<Country> GetAllCountries()", ex.Message);
                         return null;
                     }
                 }
@@ -70,8 +71,9 @@ namespace DVLD.DAL.Repositories
 
                         CountryID = Convert.ToInt32(command.ExecuteScalar());
                     }
-                    catch
+                    catch (Exception ex)
                     {
+                        EventLogger.LogError("CountryRepository", "public int GetCountryID(string countryName)", ex.Message);
                         return -1;
                     }
                 }

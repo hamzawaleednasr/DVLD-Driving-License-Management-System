@@ -45,8 +45,9 @@ namespace DVLD.DAL.Repositories
                         connection.Open();
                         return (command.ExecuteNonQuery() > 0);
                     }
-                    catch
+                    catch (Exception ex)
                     {
+                        EventLogger.LogError("ApplicationTypeRepository", "public bool Update(ApplicationType applicationType)", ex.Message);
                         return false;
                     }
                 }
@@ -74,8 +75,9 @@ namespace DVLD.DAL.Repositories
                             }
                         }
                     }
-                    catch
+                    catch (Exception ex)
                     {
+                        EventLogger.LogError("ApplicationTypeRepository", "public List<ApplicationType> GetAll()", ex.Message);
                         return null;
                     }
                 }
@@ -106,8 +108,9 @@ namespace DVLD.DAL.Repositories
                             }
                         }
                     }
-                    catch
+                    catch (Exception ex)
                     {
+                        EventLogger.LogError("ApplicationTypeRepository", "public ApplicationType GetByID(int id)", ex.Message);
                         return null;
                     }
                 }
@@ -128,8 +131,9 @@ namespace DVLD.DAL.Repositories
                         connection.Open();
                         return Convert.ToInt32(command.ExecuteScalar());
                     }
-                    catch
+                    catch (Exception ex)
                     {
+                        EventLogger.LogError("ApplicationTypeRepository", "public int GetNumberOfApplicationTypes()", ex.Message);
                         return -1;
                     }
                 }

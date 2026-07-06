@@ -81,8 +81,9 @@ namespace DVLD.DAL.Repositories
 
                         return People;
                     }
-                    catch
+                    catch (Exception ex)
                     {
+                        EventLogger.LogError("PersonRepository", "public List<Person> GetAll()", ex.Message);
                         return null;
                     }
                 }
@@ -130,8 +131,9 @@ namespace DVLD.DAL.Repositories
 
                         return People;
                     }
-                    catch
+                    catch (Exception ex)
                     {
+                        EventLogger.LogError("PersonRepository", "public List<PersonViewModel> GetAllWithCountry()", ex.Message);
                         return null;
                     }
                 }
@@ -164,8 +166,9 @@ namespace DVLD.DAL.Repositories
                             }
                         }
                     }
-                    catch
+                    catch (Exception ex)
                     {
+                        EventLogger.LogError("PersonRepository", "public Person GetByID(int id)", ex.Message);
                         return null;
                     }
                 }
@@ -255,8 +258,9 @@ namespace DVLD.DAL.Repositories
 
                         return newID;
                     }
-                    catch
+                    catch (Exception ex)
                     {
+                        EventLogger.LogError("PersonRepository", "public int Add(Person entity)", ex.Message);
                         return -1;
                     }
                 }
@@ -306,8 +310,9 @@ namespace DVLD.DAL.Repositories
 
                         return (rowsAffected > 0);
                     }
-                    catch
+                    catch (Exception ex)
                     {
+                        EventLogger.LogError("PersonRepository", "public bool Update(Person entity)", ex.Message);
                         return false;
                     }
                 }
@@ -333,8 +338,9 @@ namespace DVLD.DAL.Repositories
 
                         return (rowsAffected > 0);
                     }
-                    catch
+                    catch (Exception ex)
                     {
+                        EventLogger.LogError("PersonRepository", "public bool Delete(int id)", ex.Message);
                         return false;
                     }
             }
@@ -380,8 +386,9 @@ namespace DVLD.DAL.Repositories
                             }
                         }
                     }
-                    catch
+                    catch (Exception ex)
                     {
+                        EventLogger.LogError("PersonRepository", "public PersonViewModel GetByNationalNumberWithCountry(string nationalNumber)", ex.Message);
                         return null;
                     }
                 }
@@ -428,8 +435,9 @@ namespace DVLD.DAL.Repositories
                             }
                         }
                     }
-                    catch 
+                    catch (Exception ex)
                     {
+                        EventLogger.LogError("PersonRepository", "public List<PersonViewModel> GetByFirstNameWithCountry(string firstName)", ex.Message);
                         return null;
                     }
                 }
@@ -476,8 +484,9 @@ namespace DVLD.DAL.Repositories
                             }
                         }
                     }
-                    catch
+                    catch (Exception ex)
                     {
+                        EventLogger.LogError("PersonRepository", "public List<PersonViewModel> GetBySecondNameWithCountry(string secondName)", ex.Message);
                         return null;
                     }
                 }
@@ -524,8 +533,9 @@ namespace DVLD.DAL.Repositories
                             }
                         }
                     }
-                    catch
+                    catch (Exception ex)
                     {
+                        EventLogger.LogError("PersonRepository", "public List<PersonViewModel> GetByThirdNameWithCountry(string thirdName)", ex.Message);
                         return null;
                     }
                 }
@@ -572,8 +582,9 @@ namespace DVLD.DAL.Repositories
                             }
                         }
                     }
-                    catch
+                    catch (Exception ex)
                     {
+                        EventLogger.LogError("PersonRepository", "public List<PersonViewModel> GetByLastNameWithCountry(string lastName)", ex.Message);
                         return null;
                     }
                 }
@@ -620,8 +631,9 @@ namespace DVLD.DAL.Repositories
                             }
                         }
                     }
-                    catch
+                    catch (Exception ex)
                     {
+                        EventLogger.LogError("PersonRepository", "public List<PersonViewModel> GetByNationalityWithCountry(string nationality)", ex.Message);
                         return null;
                     }
                 }
@@ -668,8 +680,9 @@ namespace DVLD.DAL.Repositories
                             }
                         }
                     }
-                    catch
+                    catch (Exception ex)
                     {
+                        EventLogger.LogError("PersonRepository", "public List<PersonViewModel> GetByGenderWithCountry(bool gender)", ex.Message);
                         return null;
                     }
                 }
@@ -716,8 +729,9 @@ namespace DVLD.DAL.Repositories
                             }
                         }
                     }
-                    catch
+                    catch (Exception ex)
                     {
+                        EventLogger.LogError("PersonRepository", "public List<PersonViewModel> GetByPhoneWithCountry(string phone)", ex.Message);
                         return null;
                     }
                 }
@@ -764,8 +778,9 @@ namespace DVLD.DAL.Repositories
                             }
                         }
                     }
-                    catch
+                    catch (Exception ex)
                     {
+                        EventLogger.LogError("PersonRepository", "public List<PersonViewModel> GetByEmailWithCountry(string email)", ex.Message);
                         return null;
                     }
                 }
@@ -789,8 +804,9 @@ namespace DVLD.DAL.Repositories
 
                         count = Convert.ToInt32(command.ExecuteScalar());
                     }
-                    catch
+                    catch (Exception ex)
                     {
+                        EventLogger.LogError("PersonRepository", "public int GetNumberOfPeople()", ex.Message);
                         return -1;
                     }
                 }

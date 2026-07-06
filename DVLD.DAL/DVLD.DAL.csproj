@@ -41,6 +41,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="EventLogger.cs" />
     <Compile Include="Entities\Application.cs" />
     <Compile Include="Entities\ApplicationType.cs" />
     <Compile Include="Entities\Country.cs" />

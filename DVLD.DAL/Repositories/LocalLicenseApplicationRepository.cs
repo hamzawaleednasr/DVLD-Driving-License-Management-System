@@ -76,8 +76,9 @@ namespace DVLD.DAL.Repositories
                             }
                         }
                     }
-                    catch
+                    catch (Exception ex)
                     {
+                        EventLogger.LogError("LocalLicenseApplicationRepository", "public List<LocalLicenseApplication> GetAll()", ex.Message);
                         return null;
                     }
                 }
@@ -103,8 +104,9 @@ namespace DVLD.DAL.Repositories
                             }
                         }
                     }
-                    catch
+                    catch (Exception ex)
                     {
+                        EventLogger.LogError("LocalLicenseApplicationRepository", "public List<LocalLicenseApplicationViewModel> GetAllToView()", ex.Message);
                         return null;
                     }
                 }
@@ -134,8 +136,9 @@ namespace DVLD.DAL.Repositories
                             }
                         }
                     }
-                    catch
+                    catch (Exception ex)
                     {
+                        EventLogger.LogError("LocalLicenseApplicationRepository", "public LocalLicenseApplication GetByID(int id)", ex.Message);
                         return null;
                     }
                 }
@@ -165,8 +168,9 @@ namespace DVLD.DAL.Repositories
                             }
                         }
                     }
-                    catch
+                    catch (Exception ex)
                     {
+                        EventLogger.LogError("LocalLicenseApplicationRepository", "public LocalLicenseApplicationViewModel GetByIDToView(int id)", ex.Message);
                         return null;
                     }
                 }
@@ -192,8 +196,9 @@ namespace DVLD.DAL.Repositories
                         connection.Open();
                         return Convert.ToInt32(command.ExecuteScalar());
                     }
-                    catch
+                    catch (Exception ex)
                     {
+                        EventLogger.LogError("LocalLicenseApplicationRepository", "public int Add(LocalLicenseApplication entity)", ex.Message);
                         return -1;
                     }
                 }
@@ -220,8 +225,9 @@ namespace DVLD.DAL.Repositories
                         connection.Open();
                         return (command.ExecuteNonQuery() > 0);
                     }
-                    catch
+                    catch (Exception ex)
                     {
+                        EventLogger.LogError("LocalLicenseApplicationRepository", "public bool Update(LocalLicenseApplication entity)", ex.Message);
                         return false;
                     }
                 }
@@ -243,8 +249,9 @@ namespace DVLD.DAL.Repositories
                         connection.Open();
                         return (command.ExecuteNonQuery() > 0);
                     }
-                    catch
+                    catch (Exception ex)
                     {
+                        EventLogger.LogError("LocalLicenseApplicationRepository", "public bool Delete(int id)", ex.Message);
                         return false;
                     }
                 }
@@ -273,8 +280,9 @@ namespace DVLD.DAL.Repositories
                             }
                         }
                     }
-                    catch
+                    catch (Exception ex)
                     {
+                        EventLogger.LogError("LocalLicenseApplicationRepository", "public List<LocalLicenseApplicationViewModel> GetByNationalNumberToView(string nationalNumber)", ex.Message);
                         return null;
                     }
                 }
@@ -305,8 +313,9 @@ namespace DVLD.DAL.Repositories
                             }
                         }
                     }
-                    catch
+                    catch (Exception ex)
                     {
+                        EventLogger.LogError("LocalLicenseApplicationRepository", "public List<LocalLicenseApplicationViewModel> GetByFullNameToView(string fullName)", ex.Message);
                         return null;
                     }
                 }
@@ -336,8 +345,9 @@ namespace DVLD.DAL.Repositories
                             }
                         }
                     }
-                    catch
+                    catch (Exception ex)
                     {
+                        EventLogger.LogError("LocalLicenseApplicationRepository", "public List<LocalLicenseApplicationViewModel> GetByStatusToView(string status)", ex.Message);
                         return null;
                     }
                 }
@@ -358,8 +368,9 @@ namespace DVLD.DAL.Repositories
                         connection.Open();
                         return Convert.ToInt32(command.ExecuteScalar());
                     }
-                    catch
+                    catch (Exception ex)
                     {
+                        EventLogger.LogError("LocalLicenseApplicationRepository", "public int GetNumberOfLocalLicenseApplication()", ex.Message);
                         return -1;
                     }
                 }

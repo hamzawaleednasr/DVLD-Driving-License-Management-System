@@ -48,8 +48,9 @@ namespace DVLD.DAL.Repositories
                             }
                         }
                     }
-                    catch
+                    catch (Exception ex)
                     {
+                        EventLogger.LogError("TestRepository", "public List<Test> GetAll()", ex.Message);
                         return null;
                     }
                 }
@@ -80,8 +81,9 @@ namespace DVLD.DAL.Repositories
                             }
                         }
                     }
-                    catch
+                    catch (Exception ex)
                     {
+                        EventLogger.LogError("TestRepository", "public Test GetByID(int id)", ex.Message);
                         return null;
                     }
                 }
@@ -111,8 +113,9 @@ namespace DVLD.DAL.Repositories
                         connection.Open();
                         return Convert.ToInt32(command.ExecuteScalar());
                     }
-                    catch
+                    catch (Exception ex)
                     {
+                        EventLogger.LogError("TestRepository", "public int Add(Test entity)", ex.Message);
                         return -1;
                     }
                 }
@@ -144,8 +147,9 @@ namespace DVLD.DAL.Repositories
                         connection.Open();
                         return (command.ExecuteNonQuery() > 0);
                     }
-                    catch
+                    catch (Exception ex)
                     {
+                        EventLogger.LogError("TestRepository", "public bool Update(Test entity)", ex.Message);
                         return false;
                     }
                 }
@@ -167,8 +171,9 @@ namespace DVLD.DAL.Repositories
                         connection.Open();
                         return (command.ExecuteNonQuery() > 0);
                     }
-                    catch
+                    catch (Exception ex)
                     {
+                        EventLogger.LogError("TestRepository", "public bool Delete(int id)", ex.Message);
                         return false;
                     }
                 }

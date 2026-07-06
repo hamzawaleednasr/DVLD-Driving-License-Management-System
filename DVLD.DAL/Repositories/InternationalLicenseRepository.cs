@@ -83,8 +83,9 @@ namespace DVLD.DAL.Repositories
                             }
                         }
                     }
-                    catch
+                    catch (Exception ex)
                     {
+                        EventLogger.LogError("InternationalLicenseRepository", "public List<InternationalLicense> GetAll()", ex.Message);
                         return null;
                     }
                 }
@@ -114,8 +115,9 @@ namespace DVLD.DAL.Repositories
                             }
                         }
                     }
-                    catch
+                    catch (Exception ex)
                     {
+                        EventLogger.LogError("InternationalLicenseRepository", "public InternationalLicense GetByID(int id)", ex.Message);
                         return null;
                     }
                 }
@@ -155,8 +157,9 @@ namespace DVLD.DAL.Repositories
                         connection.Open();
                         return Convert.ToInt32(command.ExecuteScalar());
                     }
-                    catch
+                    catch (Exception ex)
                     {
+                        EventLogger.LogError("InternationalLicenseRepository", "public int Add(InternationalLicense entity)", ex.Message);
                         return -1;
                     }
                 }
@@ -181,8 +184,9 @@ namespace DVLD.DAL.Repositories
                         connection.Open();
                         return (command.ExecuteNonQuery() > 0);
                     }
-                    catch
+                    catch (Exception ex)
                     {
+                        EventLogger.LogError("InternationalLicenseRepository", "public bool Update(InternationalLicense entity)", ex.Message);
                         return false;
                     }
                 }
@@ -204,8 +208,9 @@ namespace DVLD.DAL.Repositories
                         connection.Open();
                         return (command.ExecuteNonQuery() > 0);
                     }
-                    catch
+                    catch (Exception ex)
                     {
+                        EventLogger.LogError("InternationalLicenseRepository", "public bool Delete(int id)", ex.Message);
                         return false;
                     }
                 }
@@ -236,8 +241,9 @@ namespace DVLD.DAL.Repositories
                             }
                         }
                     }
-                    catch
+                    catch (Exception ex)
                     {
+                        EventLogger.LogError("InternationalLicenseRepository", "public List<InternationalLicenseHistory> GetByLicenseIDToHistory(int id)", ex.Message);
                         return null;
                     }
                 }
@@ -273,8 +279,9 @@ namespace DVLD.DAL.Repositories
                             }
                         }
                     }
-                    catch
+                    catch (Exception ex)
                     {
+                        EventLogger.LogError("InternationalLicenseRepository", "public InternationalLicenseInfo GetByIDToShowInfo(int id)", ex.Message);
                         return null;
                     }
                 }
@@ -295,8 +302,9 @@ namespace DVLD.DAL.Repositories
                         connection.Open();
                         return Convert.ToInt32(command.ExecuteScalar());
                     }
-                    catch
+                    catch (Exception ex)
                     {
+                        EventLogger.LogError("InternationalLicenseRepository", "public int GetNumberOfLocalInternationalLicenses()", ex.Message);
                         return -1;
                     }
                 }
@@ -326,8 +334,9 @@ namespace DVLD.DAL.Repositories
                             }
                         }
                     }
-                    catch
+                    catch (Exception ex)
                     {
+                        EventLogger.LogError("InternationalLicenseRepository", "public List<InternationalLicense> GetByDriverID(int driverID)", ex.Message);
                         return null;
                     }
                 }

@@ -68,8 +68,9 @@ namespace DVLD.DAL.Repositories
                             }
                         }
                     }
-                    catch
+                    catch (Exception ex)
                     {
+                        EventLogger.LogError("DriverRepository", "public List<Driver> GetAll()", ex.Message);
                         return null;
                     }
                 }
@@ -96,8 +97,9 @@ namespace DVLD.DAL.Repositories
                             }
                         }
                     }
-                    catch
+                    catch (Exception ex)
                     {
+                        EventLogger.LogError("DriverRepository", "public List<DriverViewModel> GetAllToView()", ex.Message);
                         return null;
                     }
                 }
@@ -128,8 +130,9 @@ namespace DVLD.DAL.Repositories
                             }
                         }
                     }
-                    catch
+                    catch (Exception ex)
                     {
+                        EventLogger.LogError("DriverRepository", "public Driver GetByID(int id)", ex.Message);
                         return null;
                     }
                 }
@@ -160,8 +163,9 @@ namespace DVLD.DAL.Repositories
                             }
                         }
                     }
-                    catch
+                    catch (Exception ex)
                     {
+                        EventLogger.LogError("DriverRepository", "public Driver GetByPersonID(int personID)", ex.Message);
                         return null;
                     }
                 }
@@ -192,8 +196,9 @@ namespace DVLD.DAL.Repositories
                             }
                         }
                     }
-                    catch
+                    catch (Exception ex)
                     {
+                        EventLogger.LogError("DriverRepository", "public DriverViewModel GetByIDToView(int id)", ex.Message);
                         return null;
                     }
                 }
@@ -219,8 +224,9 @@ namespace DVLD.DAL.Repositories
                         connection.Open();
                         return Convert.ToInt32(command.ExecuteScalar());
                     }
-                    catch
+                    catch (Exception ex)
                     {
+                        EventLogger.LogError("DriverRepository", "public int Add(Driver entity)", ex.Message);
                         return -1;
                     }
                 }
@@ -247,8 +253,9 @@ namespace DVLD.DAL.Repositories
                         connection.Open();
                         return (command.ExecuteNonQuery() > 0);
                     }
-                    catch
+                    catch (Exception ex)
                     {
+                        EventLogger.LogError("DriverRepository", "public bool Delete(int id)", ex.Message);
                         return false;
                     }
                 }
@@ -278,8 +285,9 @@ namespace DVLD.DAL.Repositories
                             }
                         }
                     }
-                    catch
+                    catch (Exception ex)
                     {
+                        EventLogger.LogError("DriverRepository", "public DriverViewModel GetByPersonIDToView(int personID)", ex.Message);
                         return null;
                     }
                 }
@@ -310,8 +318,9 @@ namespace DVLD.DAL.Repositories
                             }
                         }
                     }
-                    catch
+                    catch (Exception ex)
                     {
+                        EventLogger.LogError("DriverRepository", "public DriverViewModel GetByNationalNumberToView(string nationalNumber)", ex.Message);
                         return null;
                     }
                 }
@@ -343,8 +352,9 @@ namespace DVLD.DAL.Repositories
                             }
                         }
                     }
-                    catch
+                    catch (Exception ex)
                     {
+                        EventLogger.LogError("DriverRepository", "public List<DriverViewModel> GetByFullNameToView(string fullName)", ex.Message);
                         return null;
                     }
                 }
@@ -365,8 +375,9 @@ namespace DVLD.DAL.Repositories
                         connection.Open();
                         return Convert.ToInt32(command.ExecuteScalar());
                     }
-                    catch
+                    catch (Exception ex)
                     {
+                        EventLogger.LogError("DriverRepository", "public int GetNumberOfDrivers()", ex.Message);
                         return -1;
                     }
                 }

@@ -51,8 +51,9 @@ namespace DVLD.DAL.Repositories
                             }
                         }
                     }
-                    catch
+                    catch (Exception ex)
                     {
+                        EventLogger.LogError("ApplicationRepository", "public List<Application> GetAll()", ex.Message);
                         return null;
                     }
                 }
@@ -83,8 +84,9 @@ namespace DVLD.DAL.Repositories
                             }
                         }
                     }
-                    catch
+                    catch (Exception ex)
                     {
+                        EventLogger.LogError("ApplicationRepository", "public Application GetByID(int id)", ex.Message);
                         return null;
                     }
                 }
@@ -121,8 +123,9 @@ namespace DVLD.DAL.Repositories
                         connection.Open();
                         return Convert.ToInt32(command.ExecuteScalar());
                     }
-                    catch
+                    catch (Exception ex)
                     {
+                        EventLogger.LogError("ApplicationRepository", "public int Add(Application entity)", ex.Message);
                         return -1;
                     }
                 }
@@ -157,8 +160,9 @@ namespace DVLD.DAL.Repositories
                         connection.Open();
                         return (command.ExecuteNonQuery() > 0);
                     }
-                    catch
+                    catch (Exception ex)
                     {
+                        EventLogger.LogError("ApplicationRepository", "public bool Update(Application entity)", ex.Message);
                         return false;
                     }
                 }
@@ -180,8 +184,9 @@ namespace DVLD.DAL.Repositories
                         connection.Open();
                         return (command.ExecuteNonQuery() > 0);
                     }
-                    catch
+                    catch (Exception ex)
                     {
+                        EventLogger.LogError("ApplicationRepository", "public bool Delete(int id)", ex.Message);
                         return false;
                     }
                 }

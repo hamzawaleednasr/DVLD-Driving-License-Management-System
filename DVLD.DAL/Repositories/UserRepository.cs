@@ -69,8 +69,9 @@ namespace DVLD.DAL.Repositories
                             }
                         }
                     }
-                    catch
+                    catch (Exception ex)
                     {
+                        EventLogger.LogError("UserRepository", "public List<User> GetAll()", ex.Message);
                         return null;
                     }
                 }
@@ -97,8 +98,9 @@ namespace DVLD.DAL.Repositories
                             }
                         }
                     }
-                    catch
+                    catch (Exception ex)
                     {
+                        EventLogger.LogError("UserRepository", "public List<UserViewModel> GetAllToView()", ex.Message);
                         return null;
                     }
                 }
@@ -129,8 +131,9 @@ namespace DVLD.DAL.Repositories
                             }
                         }
                     }
-                    catch
+                    catch (Exception ex)
                     {
+                        EventLogger.LogError("UserRepository", "public User GetByID(int id)", ex.Message);
                         return null;
                     }
                 }
@@ -161,8 +164,9 @@ namespace DVLD.DAL.Repositories
                             }
                         }
                     }
-                    catch
+                    catch (Exception ex)
                     {
+                        EventLogger.LogError("UserRepository", "public UserViewModel GetByIDToView(int userID)", ex.Message);
                         return null;
                     }
                 }
@@ -193,8 +197,9 @@ namespace DVLD.DAL.Repositories
                             }
                         }
                     }
-                    catch
+                    catch (Exception ex)
                     {
+                        EventLogger.LogError("UserRepository", "public User GetByUsername(string username)", ex.Message);
                         return null;
                     }
                 }
@@ -221,8 +226,9 @@ namespace DVLD.DAL.Repositories
                         connection.Open();
                         return Convert.ToInt32(command.ExecuteScalar());
                     }
-                    catch
+                    catch (Exception ex)
                     {
+                        EventLogger.LogError("UserRepository", "public int Add(User entity)", ex.Message);
                         return -1;
                     }
                 }
@@ -249,8 +255,9 @@ namespace DVLD.DAL.Repositories
                         connection.Open();
                         return (command.ExecuteNonQuery() > 0);
                     }
-                    catch
+                    catch (Exception ex)
                     {
+                        EventLogger.LogError("UserRepository", "public bool Update(User entity)", ex.Message);
                         return false;
                     }
                 }
@@ -272,8 +279,9 @@ namespace DVLD.DAL.Repositories
                         connection.Open();
                         return (command.ExecuteNonQuery() > 0);
                     }
-                    catch
+                    catch (Exception ex)
                     {
+                        EventLogger.LogError("UserRepository", "public bool Delete(int id)", ex.Message);
                         return false;
                     }
                 }
@@ -303,8 +311,9 @@ namespace DVLD.DAL.Repositories
                             }
                         }
                     }
-                    catch
+                    catch (Exception ex)
                     {
+                        EventLogger.LogError("UserRepository", "public UserViewModel GetByPersonIDToView(int personID)", ex.Message);
                         return null;
                     }
                 }
@@ -335,8 +344,9 @@ namespace DVLD.DAL.Repositories
                             }
                         }
                     }
-                    catch
+                    catch (Exception ex)
                     {
+                        EventLogger.LogError("UserRepository", "public UserViewModel GetByUsernameToView(string username)", ex.Message);
                         return null;
                     }
                 }
@@ -367,8 +377,9 @@ namespace DVLD.DAL.Repositories
                             }
                         }
                     }
-                    catch
+                    catch (Exception ex)
                     {
+                        EventLogger.LogError("UserRepository", "public List<UserViewModel> GetByFullNameToView(string fullName)", ex.Message);
                         return null;
                     }
                 }
@@ -399,8 +410,9 @@ namespace DVLD.DAL.Repositories
                             }
                         }
                     }
-                    catch
+                    catch (Exception ex)
                     {
+                        EventLogger.LogError("UserRepository", "public List<UserViewModel> GetByActivityToView(bool isActive)", ex.Message);
                         return null;
                     }
                 }
@@ -421,8 +433,9 @@ namespace DVLD.DAL.Repositories
                         connection.Open();
                         return Convert.ToInt32(command.ExecuteScalar());
                     }
-                    catch
+                    catch (Exception ex)
                     {
+                        EventLogger.LogError("UserRepository", "public int GetNumberOfUsers()", ex.Message);
                         return -1;
                     }
                 }
@@ -445,8 +458,9 @@ namespace DVLD.DAL.Repositories
                         connection.Open();
                         return (command.ExecuteNonQuery() > 0);
                     }
-                    catch
+                    catch (Exception ex)
                     {
+                        EventLogger.LogError("UserRepository", "public bool ChangePassword(int userID, string newPassword)", ex.Message);
                         return false;
                     }
                 }
