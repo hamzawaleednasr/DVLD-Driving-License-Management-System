@@ -105,7 +105,6 @@ namespace DVLD.DAL.Repositories
                     command.Parameters.AddWithValue("@CreatedByUserID", entity.CreatedByUserID);
                     command.Parameters.AddWithValue("@TestAppointmentID", entity.TestAppointmentID);
 
-                    // التحقق من وجود ملاحظات لمنع إدخال نصوص فارغة بدلاً من NULL في الـ DB
                     command.Parameters.AddWithValue("@TestNotes", string.IsNullOrWhiteSpace(entity.TestNotes) ? DBNull.Value : (object)entity.TestNotes);
 
                     try
